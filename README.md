@@ -4722,6 +4722,23 @@ volumes:
 networks:
   bot-network:
     driver: bridge
+fastapi==0.109.2
+uvicorn==0.27.1
+openai==1.12.0
+requests==2.31.0
+python-multipart==0.0.9
+pydantic==2.6.1
+python-dotenv==1.0.1
+aiohttp==3.9.3
+typing-extensions==4.9.0
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "bash start.sh"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
 
 
 
