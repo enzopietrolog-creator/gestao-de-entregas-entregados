@@ -4739,6 +4739,15 @@ dockerfilePath = "Dockerfile"
 startCommand = "bash start.sh"
 healthcheckPath = "/health"
 healthcheckTimeout = 300
+import os
+import uvicorn
+from app.whatsapp_bot import app
+
+if __name__ == "__main__":
+    # O Railway fornece a variável PORT. Se não houver, usamos 3000 como padrão.
+    port = int(os.environ.get("PORT", 3000))
+    # IMPORTANTE: O host DEVE ser "0.0.0.0" para ser acessível externamente
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 
 
