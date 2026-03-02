@@ -4749,6 +4749,14 @@ if __name__ == "__main__":
     # IMPORTANTE: O host DEVE ser "0.0.0.0" para ser acessível externamente
     uvicorn.run(app, host="0.0.0.0", port=port)
 pip install -r requirements.txt
+python main.py
+http://localhost:8000
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8000
+docker build -t gestao-entregas .
+docker run -p 8000:8000 gestao-entregas
+
+
 
 
 
