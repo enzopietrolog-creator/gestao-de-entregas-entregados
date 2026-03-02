@@ -1,3 +1,85 @@
+/gestao-de-entregas
+│
+├── main.py
+├── requirements.txt
+├── Procfile
+├── runtime.txt
+└── README.md
+fastapi
+uvicorn
+python-dotenv
+requests
+httpx
+Procfile
+web: uvicorn main:app --host 0.0.0.0 --port $PORT
+runtime.txt
+python-3.11.6
+# Gestão de Entregas
+
+## Como executar localmente
+
+### Instalar dependências
+
+pip install -r requirements.txt
+
+### Rodar servidor
+
+uvicorn main:app --reload
+
+## Deploy no Railway
+
+O Railway usa:
+
+uvicorn main:app --host 0.0.0.0 --port $PORT
+git add .
+git commit -m "Corrige configuração de deploy Railway"
+git push
+/app/main.py
+web: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+gestao-de-entregas/
+│
+├── main.py
+├── requirements.txt
+├── Procfile
+├── runtime.txt
+└── README.md
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """
 Módulo de relatório semanal de desempenho dos motoristas.
 Gera relatório toda sexta-feira com ranking, estatísticas e apontamentos.
