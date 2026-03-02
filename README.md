@@ -4748,7 +4748,7 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 3000))
     # IMPORTANTE: O host DEVE ser "0.0.0.0" para ser acessível externamente
     uvicorn.run(app, host="0.0.0.0", port=port)
-
+pip install -r requirements.txt
 
 
 
